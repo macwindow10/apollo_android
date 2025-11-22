@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if (item.getItemId() == R.id.nav_home) {
                     selectedFragment = new HomeFragment();
-                } else if (item.getItemId() == R.id.nav_home) {
+                } else if (item.getItemId() == R.id.nav_log) {
                     selectedFragment = new LogFragment();
-                }else if (item.getItemId() == R.id.nav_home) {
+                }else if (item.getItemId() == R.id.nav_insights) {
                     selectedFragment = new InsightsFragment();
                 }
 
