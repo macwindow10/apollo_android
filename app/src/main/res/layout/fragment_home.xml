@@ -20,7 +20,7 @@
         android:textSize="72sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
-        android:textColor="@color/ligh_blue" />
+        android:textColor="@color/light_blue" />
 
     <TextView
         android:id="@+id/status_text"
