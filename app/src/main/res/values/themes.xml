@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.Apollo" parent="Base.Theme.Apollo" />
+
+    <style name="Theme.Apollo.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>
