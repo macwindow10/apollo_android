@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -68,6 +69,15 @@ class LogAdapter extends RecyclerView.Adapter<LogAdapter.LogViewHolder> {
     public void onBindViewHolder(LogViewHolder holder, int position) {
         LogItem item = logItems.get(position);
         holder.typeText.setText(item.type);
+        if (item.type.equals("Exercise")) {
+            holder.imageView.setImageResource(R.drawable.exercise);
+        } else if (item.type.equals("Sleep")) {
+            holder.imageView.setImageResource(R.drawable.sleep);
+        } else if (item.type.equals("Mood")) {
+            holder.imageView.setImageResource(R.drawable.mood);
+        } else if (item.type.equals("Diet")) {
+            holder.imageView.setImageResource(R.drawable.diet);
+        }
         holder.detailsText.setText(item.details);
         holder.timeText.setText(item.time);
     }
@@ -78,12 +88,14 @@ class LogAdapter extends RecyclerView.Adapter<LogAdapter.LogViewHolder> {
     }
 
     static class LogViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
         TextView typeText;
         TextView detailsText;
         TextView timeText;
 
         public LogViewHolder(View itemView) {
             super(itemView);
+            imageView = itemView.findViewById(R.id.image);
             typeText = itemView.findViewById(R.id.log_type);
             detailsText = itemView.findViewById(R.id.log_details);
             timeText = itemView.findViewById(R.id.log_time);

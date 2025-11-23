@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -19,6 +21,7 @@ import com.github.mikephil.charting.formatter.ValueFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class HomeFragment extends Fragment {
     private TextView glucoseLevelText;
@@ -40,10 +43,12 @@ public class HomeFragment extends Fragment {
         }
 
         // TODO: Update this with actual glucose level from your data source
-        updateGlucoseLevel(95); // Example value
+        Random random = new Random();
+        int value = random.nextInt(41) + 80;  // 80 to 120
+        updateGlucoseLevel(value); // Example value
 
         // Setup chart with dummy data
-        setupGlucoseChart();
+        setupGlucoseChart(value);
 
         return view;
     }
@@ -64,19 +69,22 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    private void setupGlucoseChart() {
+    private void setupGlucoseChart(int value) {
+
+        Random random = new Random();
         // Dummy data - replace with your actual data
         List<Entry> entries = new ArrayList<>();
-        entries.add(new Entry(0, 95f));  // 9 AM
-        entries.add(new Entry(1, 102f)); // 10 AM
-        entries.add(new Entry(2, 115f)); // 11 AM
-        entries.add(new Entry(3, 108f)); // 12 PM
-        entries.add(new Entry(4, 98f));  // 1 PM
-        entries.add(new Entry(5, 92f));  // 2 PM
+        entries.add(new Entry(0, value));  // 9 AM
+        entries.add(new Entry(1, random.nextInt(41) + 80)); // 10 AM
+        entries.add(new Entry(2, random.nextInt(41) + 80)); // 11 AM
+        entries.add(new Entry(3, random.nextInt(41) + 80)); // 12 PM
+        entries.add(new Entry(4, random.nextInt(41) + 80));  // 1 PM
+        entries.add(new Entry(5, random.nextInt(41) + 80));  // 2 PM
 
         // Create a data set with the entries
         LineDataSet dataSet = new LineDataSet(entries, "Glucose Level");
-        dataSet.setColor(Color.BLUE);
+        int myColor = ContextCompat.getColor(getContext(), R.color.darker_blue);
+        dataSet.setColor(myColor);
         dataSet.setValueTextColor(Color.BLACK);
         dataSet.setValueTextSize(10f);
         dataSet.setLineWidth(2f);
