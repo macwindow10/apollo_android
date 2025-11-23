@@ -91,14 +91,7 @@ public class HomeFragment extends Fragment {
         // Configure x-axis
         XAxis xAxis = glucoseChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        /*
-        xAxis.setValueFormatter((float value, AxisBase axis) -> {
-            int index = (int) value;
-            if (index >= 0 && index < timeValues.length) {
-                return timeValues[index];
-            }
-            return "";
-        });*/
+        xAxis.setTextSize(14f);
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {
@@ -121,6 +114,7 @@ public class HomeFragment extends Fragment {
         leftAxis.setAxisLineWidth(2f);
         leftAxis.setAxisLineColor(Color.BLACK);
         leftAxis.setTextColor(Color.BLACK);
+        leftAxis.setTextSize(14f);
         leftAxis.setDrawGridLines(true);
         leftAxis.setGridColor(Color.LTGRAY);
 
@@ -137,7 +131,7 @@ public class HomeFragment extends Fragment {
         glucoseChart.setScaleEnabled(true);
         glucoseChart.setPinchZoom(true);
         glucoseChart.setDrawGridBackground(false);
-        glucoseChart.setBackgroundColor(Color.WHITE);
+        glucoseChart.setBackgroundColor(Color.TRANSPARENT);
         glucoseChart.getXAxis().setTextColor(Color.BLACK);
         glucoseChart.getAxisLeft().setTextColor(Color.BLACK);
         glucoseChart.setExtraBottomOffset(10f);

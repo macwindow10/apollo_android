@@ -26,9 +26,10 @@ public class LogFragment extends Fragment {
 
         // Sample data - replace with your actual data
         List<LogItem> logItems = new ArrayList<>();
-        logItems.add(new LogItem("Exercise", "30 min walk", "10:30 AM"));
-        logItems.add(new LogItem("Meal", "Chicken salad", "1:00 PM"));
-        logItems.add(new LogItem("Medication", "Insulin", "8:00 AM"));
+        logItems.add(new LogItem("Exercise", "", "10:30 AM"));
+        logItems.add(new LogItem("Sleep", "", "1:00 PM"));
+        logItems.add(new LogItem("Mood", "", "8:00 AM"));
+        logItems.add(new LogItem("Diet", "", "8:00 AM"));
 
         logAdapter = new LogAdapter(logItems);
         logRecyclerView.setAdapter(logAdapter);

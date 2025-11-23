@@ -25,17 +25,14 @@ public class InsightsFragment extends Fragment {
 
         // Initialize insights list
         insights = new ArrayList<>();
-        insights.add("Take a 15-minute walk after meals to help lower blood sugar levels.");
-        insights.add("Drink more water throughout the day to stay hydrated.");
-        insights.add("Consider having a small protein-rich snack before bed to prevent nighttime lows.");
-        insights.add("Your blood sugar tends to spike after breakfast. Try a lower carb option.");
-        insights.add("Your blood sugar is most stable between 80-120 mg/dL. Keep up the good work!");
+        insights.add("Great Job! Take a 15-minute walk after meals to help lower blood sugar levels.");
+        insights.add("Good Job! Drink more water throughout the day to stay hydrated.");
+        insights.add("Great Job! Consider having a small protein-rich snack before bed to prevent nighttime lows.");
+        insights.add("Great Job! Your blood sugar tends to spike after breakfast. Try a lower carb option.");
+        insights.add("Great Job! Your blood sugar is most stable between 80-120 mg/dL. Keep up the good work!");
 
         // Display a random insight
         showRandomInsight();
-
-        // Set up refresh button
-        view.findViewById(R.id.refresh_button).setOnClickListener(v -> showRandomInsight());
 
         return view;
     }

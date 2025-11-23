@@ -32,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Glucose"
+                    android:textColor="@color/darker_blue"
                     android:textSize="48sp"
                     android:textStyle="bold" />
 
@@ -59,6 +60,7 @@
                         android:layout_marginTop="4dp"
                         android:gravity="bottom"
                         android:text="mg/dL"
+                        android:textColor="@color/darker_blue"
                         android:textSize="24sp" />
 
                     <TextView
@@ -94,13 +96,15 @@
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:text="Realtime Trend"
+                    android:textColor="@color/darker_blue"
                     android:textSize="32sp"
                     android:textStyle="bold" />
 
                 <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/glucose_chart"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp" />
+                    android:layout_height="300dp"
+                    android:layout_margin="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
